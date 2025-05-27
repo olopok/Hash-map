@@ -1,5 +1,3 @@
-import LinkedList from "./linkedlist.js";
-
 export class HashMap {
   capacity = 16;
   loadFactor = 0.75;
@@ -43,5 +41,32 @@ export class HashMap {
         return console.log(`The value of ${key} is: ${bucket[i][1]}`);
       } else return console.log(`The key ${key} not found:`, null);
     }
+  }
+
+  has(key) {
+    for (let i = 0; i < this.buckets.length; i++) {
+      for (let elem of this.buckets[i]) {
+        if (elem[0] === key) {
+          return true;
+        }
+      }
+    }
+    return false;
+  }
+
+  remove(key) {
+    if (this.has(key)) {
+      const index = this.hash(key);
+      const bucket = this.buckets[index];
+      for (let arr of this.buckets[index]) {
+        if (arr[0] === key) {
+          const entryIndex = this.buckets[index].indexOf(arr);
+          this.buckets[index].splice(entryIndex, 1);
+          console.log("remove", this.buckets);
+          return true;
+        }
+      }
+    }
+    return false;
   }
 }

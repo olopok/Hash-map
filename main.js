@@ -18,5 +18,6 @@ test.set("lion", "golden");
 test.set("Banana", "brown");
 
 test.get("lon");
-
+console.log(test.has("Banana"));
+console.log(test.remove("kite"));
 console.log("test", test.buckets);

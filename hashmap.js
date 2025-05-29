@@ -75,6 +75,7 @@ export class HashMap {
     }
     return false;
   }
+<<<<<<< HEAD
 
   length() {
     let entries = 0;
@@ -138,4 +139,6 @@ export class HashMap {
     this.buckets = buckets;
     this.growingAt = Math.ceil(this.capacity * this.loadFactor);
   }
+=======
+>>>>>>> 8aa9539b0f5a3a8aa3d7923259d7d572d14cbbac
 }
